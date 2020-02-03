@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<% include partials/HTMLhead_PAGEext %>
+
+<body onload="loadPMRs_FNCTN()" class="wp-menu skin-green-dark fixed-layout">
+    <% include partials/Preloader_ext %>
+    <div id="main-wrapper">
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <% include partials/Logo %>
+
+                <div class="navbar-collapse">
+                    <% include partials/Toggle_ext %>
+                    <ul class="navbar-nav my-lg-0">
+                        <% include partials/Top_navbar %>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <% include partials/Sidebar %>
+
+        <div class="page-wrapper">
+            <div class="container-fluid">
+                <div class="row page-titles">
+                    <div class="col-md-5 align-self-center">
+                        <h4 class="text-themecolor">PMR</h4>
+                    </div>
+                    <div class="col-md-7 align-self-center text-right">
+                        <div class="d-flex justify-content-end align-items-center">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/dashboardPage_route">Home</a></li>
+                                <li class="breadcrumb-item active">PMR</li>
+                            </ol>
+                            <button type="button" class="btn btn-info d-none d-lg-block m-l-15" data-toggle="modal" data-target="#AddPMRFormModal_id"><i class="fa fa-plus-circle"></i> Create New PMR</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+
+
+
+
+
+                
+                <div class="row">
+                        <!-- column -->
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="table-responsive m-t-40">
+                                        
+                                        
+                                       <h4>Search PO</h4>
+                                        <input type="text" id="POSearchBarInput_id" placeholder="Enter PO number" style="width:200px; height: 35px">
+                                        <button class="btn btn-info" onclick="searchPOoutside_FNCTN()">Search</button>
+                                        <br><br><br>
+                                        <h4>Search PMR</h4>
+                                        <input type="text" id="PMRSearchBarInput_id" placeholder="Enter keyword" style="width:200px; height: 35px">
+                                        <button class="btn btn-info" onclick="searchPMR_FNCTN()">Search</button>
+                                        <br><br><br>
+                                        <table id="PMRsTable_id" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">    
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+
+       
+                
+                    <div class="modal fade" id="AddPMRFormModal_id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title" id="exampleModalLabel1">New PMR</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="recipient-name" class="control-label">PMR Time Scope</label>
+                                            <select id="PMRtimescopeSelect_id" class="form-control">
+                                                <option value="1st Semester">1st Semester</option>
+                                                <option value="2nd Semester">2nd Semester</option>
+                                                <option value="1st Quarter">1st Quarter</option>
+                                                <option value="2nd Quarter">2nd Quarter</option>
+                                                <option value="3rd Quarter">3rd Quarter</option>
+                                                <option value="4th Quarter">4th Quarter</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="recipient-name" class="control-label">Year</label>
+                                            <select id="yearSelect_id" class="form-control">
+                                                <option value="2018">2018</option>
+                                                <option value="2019">2019</option>
+                                                <option value="2020">2020</option>
+                                                <option value="2021">2021</option>
+                                                <option value="2022">2022</option>
+                                             
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="recipient-name" class="control-label">Program</label>
+                                            <select id="programSelect_id" class="form-control">
+                                                <option value="RET">RET</option>
+                                                <option value="ACAD">ACAD</option>
+                                                <option value="Admin">Admin</option>
+                                                <option value="UBAP">UBAP</option>
+                                            </select>
+                                        </div>
+                                        
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary" onclick="addNewPMR_FNCTN()">Create</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+
+
+                    <div class="modal fade" id="UpdatePMRFormModal_id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" id="exampleModalLabel1">Update PMR</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="form-group">
+                                                <label for="recipient-name" class="control-label">PMR Time Scope</label>
+                                                <select id="UpdatePMRtimescopeSelect_id" class="form-control">
+                                                    <option value="1st Semester">1st Semester</option>
+                                                    <option value="2nd Semester">2nd Semester</option>
+                                                    <option value="1st Quarter">1st Quarter</option>
+                                                    <option value="2nd Quarter">2nd Quarter</option>
+                                                    <option value="3rd Quarter">3rd Quarter</option>
+                                                    <option value="4th Quarter">4th Quarter</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="recipient-name" class="control-label">Year</label>
+                                                <select id="UpdateyearSelect_id" class="form-control">
+                                                    <option value="2018">2018</option>
+                                                    <option value="2019">2019</option>
+                                                    <option value="2020">2020</option>
+                                                    <option value="2021">2021</option>
+                                                    <option value="2022">2022</option>
+                                                 
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="recipient-name" class="control-label">Program</label>
+                                                <select id="UpdateprogramSelect_id" class="form-control">
+                                                    <option value="RET">RET</option>
+                                                    <option value="ACAD">ACAD</option>
+                                                    <option value="Admin">Admin</option>
+                                                    <option value="UBAP">UBAP</option>
+                                                </select>
+                                                <input type="hidden" id="PMRToBeUpdated_id">
+                                            </div>
+                                            
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary" onclick="updatePMR_FNCTN()">Update</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+            <!-- ============================================================== -->
+            <!-- End PAge Content -->
+            <!-- ============================================================== -->
+           
+        </div>
+    </div>
+    <br><br>
+    <% include partials/Footer %>
+    </div>
+    <% include partials/Other_plugins %>
+    <script src="./controller/PMR1st_CONTROLLER.js"></script>
+    <script src="assets/node_modules/sweetalert/sweetalert.min.js"></script>
+    <script src="assets/node_modules/sweetalert/jquery.sweet-alert.custom.js"></script>
+    <script src="./SomeAssetsNo1/SomeDeveloperDefinedjs/pmr1st_SCRIPT.js"></script>
+    <script src="./SomeAssetsNo1/SomeDeveloperDefinedjs/someGlobalFunctionsNo1.js"></script>
+    <!-- <script src="./SomeAssetsNo1/SomeDeveloperDefinedjs/jquery-3.3.1.js"></script> -->
+   
+</body>
+
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/HTMLhead_PAGEext %>
+</head>
+
+<body class="wp-menu skin-green-dark fixed-layout">
+    <% include partials/Preloader_ext %>
+    <div id="main-wrapper">
+    
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+            <% include partials/Logo %>
+            <div class="navbar-collapse">
+                <% include partials/Toggle_ext %>
+                <ul class="navbar-nav my-lg-0">
+                    <% include partials/Top_navbar %>
+                </ul>
+            </div>
+            </nav>
+        </header>
+        
+        <% include partials/Sidebar %>
+        <div class="page-wrapper">
+
+            <div class="container-fluid">
+            
+                <div class="row page-titles">
+                    <div class="col-md-5 align-self-center">
+                        <h4 class="text-themecolor">APP</h4>
+                    </div>
+                    <div class="col-md-7 align-self-center text-right">
+                        <div class="d-flex justify-content-end align-items-center">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/dashboardPage_route">Home</a></li>
+                                <li class="breadcrumb-item active">APP</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <h5 class="m-t-20">Filter Program</h5>
+                                <select class="select2 m-b-10 select2-multiple" style="width: 100%" multiple="multiple" data-placeholder="Choose" id="ppmp_program">
+                                        <option value="CA">ACAD</option>
+                                        <option value="NV">ADMIN</option>
+                                        <option value="OR">UBAP</option>
+                                        <option value="WA">RET</option>
+                                </select>
+
+                                <h5 class="m-t-20">Filter Year</h5>
+                                <select class="select2 m-b-10 select2-multiple" style="width: 100%" multiple="multiple" data-placeholder="Choose" id="ppmp_year">
+                                </select>
+                                <p></p>
+
+                                <button type="button" class="btn waves-effect waves-light btn-rounded btn-outline-success" id="filter-all">Filter</button>
+
+                                        <div class="button-box m-t-20"> 
+                                            <a class="btn btn-info" href="javascript:void(0)" onclick="fetch();">Show all</a>
+                                        </div>
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                            <div class="ribbon ribbon-bookmark  ribbon-default">CSE</div>
+                            <div class="ribbon ribbon-bookmark ribbon-right ribbon-default"> <span id="total_cse">1</span> </div>
+                    
+                                <h4 class="card-title"></h4>
+                                <br><br><br>
+                                <hr>
+                                <div class="row">
+
+                                <div class="col-md-12">
+                                      <div id="cse-consolidated"></div>
+                                </div> 
+                                 
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                            <div class="ribbon ribbon-bookmark  ribbon-default">NON-CSE</div>
+                            <div class="ribbon ribbon-bookmark ribbon-right ribbon-default"> <span id="total_non_cse">1</span> </div>
+                    
+                                <h4 class="card-title"></h4>
+                                <br><br><br>
+                                <hr>
+                                <div class="row">
+                                <div class="col-md-12">
+                                        <div id="non-cse-consolidated"></div>
+                                 </div>
+ 
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                            <div class="ribbon ribbon-bookmark  ribbon-default">Mixed</div>
+                            <div class="ribbon ribbon-bookmark ribbon-right ribbon-default"> <span id="total_mixed">1</span> </div>
+                    
+                                <h4 class="card-title"></h4>
+                                <br><br><br>
+                                <hr>
+                                <div class="row">
+
+                                 <div class="col-md-12">
+                                        <div id="mixed-consolidated"></div>
+                                 </div>   
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+               
+            </div>           
+                <% include partials/Right_sidebar %>
+               
+            </div>
+
+        </div>
+          
+        <% include partials/Footer %>
+
+    </div>
+    
+    <% include partials/Other_plugins %>
+
+    <script src="controller/select_app_CONTROLLER.js"></script>
+
+</body>
+
+</html>

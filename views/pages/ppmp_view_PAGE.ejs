@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/HTMLhead_PAGEext %>
+<!--
+    <style>
+    body{
+        zoom: 90%;
+    }
+    </style>
+-->
+</head>
+
+<body class="wp-menu skin-green-dark fixed-layout">
+    <% include partials/Preloader_ext %>
+    <div id="main-wrapper">
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <% include partials/Logo %>
+                <div class="navbar-collapse">
+                    <% include partials/Toggle_ext %>
+                    <ul class="navbar-nav my-lg-0">
+                        <% include partials/Top_navbar %>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <% include partials/Sidebar %>
+        
+        <div class="page-wrapper">
+        
+            <div class="container-fluid">
+
+            
+            <div class="row page-titles">
+                <div class="col-md-5 align-self-center">
+                    <h4 style="font-weight: bold;" class="text-uppercase ppmp_type_title">PPMP-TYPE</h4>
+                </div>
+                <div class="col-md-7 align-self-center text-right">
+                    <div class="d-flex justify-content-end align-items-center">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/dashboardPage_route">Home</a></li>
+                            <li class="breadcrumb-item active"><a href="/select_ppmpPage_route">PPMP</a></li>
+                            <li class="breadcrumb-item active ppmp_type_title text-uppercase">PPMP-TYPE</li>
+                        </ol>
+                        
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="text-center">
+                                   <small><strong><p class="font-weight-bold">Republic of the Philippines</p></strong></small>
+                                    <h4 class="font-weight-bold">CENTRAL LUZON STATE UNIVERSITY</h4>
+                                    <h6 class="font-italic">Science City of Munoz, Nueva Ecija</h6>
+                                    <h3 class="font-weight-bold">PROJECT PROCUREMENT MANAGEMENT PLAN 
+                                        <a style="all: initial; pointer-events:none; font-size:24px; font-family: 'Poppins', sans-serif" class="font-weight-bold" href="javascript:void(0)" id="inline-date"></a>
+                                    </h3>
+                                    
+                                <table style="clear: both;" class="table table-bordered table-striped" id="user">
+                                    <thead>
+                                        <tr>
+
+                                            <th width="35%"><a style="all: initial; pointer-events:none; font-size:15px; font-family: 'Poppins', sans-serif" href="javascript:void(0)"  class="font-weight-bold" class="text-dark" id="inline-trade-mark-1" data-type="text" data-pk="1" data-title="Enter trade mark"></a></th>
+                                            <th width="35%"><a style="all: initial; pointer-events:none; font-size:15px; font-family: 'Poppins', sans-serif" href="javascript:void(0)"  class="font-weight-bold" href="javascript:void(0)" class="text-dark" id="inline-trade-mark-2" data-type="text" data-pk="1" data-title="Enter trade mark"></a></th>
+                                            <th width="35%"><a style="all: initial; pointer-events:none; font-size:15px; font-family: 'Poppins', sans-serif" href="javascript:void(0)"  class="font-weight-bold" href="javascript:void(0)" class="text-dark" id="inline-trade-mark-3" data-type="text" data-pk="1" data-title="Enter trade mark"></a></th>
+                                
+                                        </tr>
+                                    </thead>
+                                        <tr>
+                                            <td width="25%" class="float-left">Fund</td>
+                                            <td width="75%" class="float-left"><a  style="all: initial; pointer-events:none; font-size:15px; font-family: 'Poppins', sans-serif" href="javascript:void(0)" href="javascript:void(0)" class="text-dark" id="inline-fund" data-type="text" data-pk="1" data-title="Enter fund">GAA (101)</a></td>
+                                        </tr>
+                                        <tr>
+                                            <!-- <td width="35%"><a href="javascript:void(0)" class="text-dark" id="inline-paps" data-type="text" data-pk="1" data-title="Enter paps">Projects, Programs and Activities (PAPs)</a></td> -->
+                                            <td width="35%">Projects, Programs and Activities (PAPs)</td>
+                                        </tr>
+                                </table>
+
+                                <table class="tablesaw table-striped table-hover table-bordered table" style="margin-top:-1%;">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" data-tablesaw-sortable-col>Code</th>
+                                            <th scope="col" data-tablesaw-sortable-col>General Description</th>
+                                            <th scope="col" data-tablesaw-sortable-col>Units</th>
+                                            <th scope="col" data-tablesaw-sortable-col>Unit Price</th>
+                                            <th scope="col" data-tablesaw-sortable-col>Size</th>
+                                            <th scope="col" data-tablesaw-sortable-col>Estimated Budget</th>
+                                            <th scope="col" data-tablesaw-sortable-col>Mode of Procurement</th>
+                                            <th scope="col" data-tablesaw-sortable-col>1st Quarter</th>
+                                            <th scope="col" data-tablesaw-sortable-col>2nd Quarter</th>
+                                            <th scope="col" data-tablesaw-sortable-col>3rd Quarter</th>
+                                            <th scope="col" data-tablesaw-sortable-col>4th Quarter</th>
+                                            <th scope="col" data-tablesaw-sortable-col>Note</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="pppmp-item-content">
+                                    </tbody>
+
+                                </table>
+
+
+
+
+                                <table border='1'>
+                                    <tr>
+                                        <td colspan="2">TOTAL BUDGET:</td>
+                                        <td>-----------</td>
+                                        <td>-----------</td>
+                                        <td id="ppmpTotalBudgetTabledata_id"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">+ 10% Provision for Inflation</td>
+                                        <td>-----------</td>
+                                        <td>-----------</td>
+                                        <td id="ppmpProvisionForInflationTabledata_id"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">+ 10% Contingency  </td>
+                                        <td>-----------</td>
+                                        <td>-----------</td>
+                                        <td id="ppmpContingencyTabledata_id"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">TOTAL ESTIMATED BUDGET:    </td>
+                                        <td>-----------</td>
+                                        <td>-----------</td>
+                                        <td id="ppmpTotalEstimBudTabledata_id"></td>
+                                    </tr>
+                                </table>
+
+                                <p style="font-size:12px;" class="d-flex justify-content-around">
+                                    <span>Prepared by:</span>
+                                    <span>Recommending approval:</span>
+                                    <span>Approved by:</span>
+                                </p>
+
+                                <h4 class="d-flex justify-content-around text-center">
+                                       <span><a style="all: initial; pointer-events:none; font-size:15px; font-family: 'Poppins', sans-serif" href="javascript:void(0)" href="javascript:void(0)" class="text-dark" id="inline-prepared-by" data-type="text" data-pk="1" data-title="Prepared by:">End-User</a></span>
+                                       
+                                       <span><a style="all: initial; pointer-events:none; font-size:15px; font-family: 'Poppins', sans-serif" href="javascript:void(0)" href="javascript:void(0)" class="text-dark" id="inline-recommending-approval" data-type="text" data-pk="1" data-title="recommending approval">MELISSA A. AGULTO</a></span>
+                                       <span><a style="all: initial; pointer-events:none; font-size:15px; font-family: 'Poppins', sans-serif" href="javascript:void(0)" href="javascript:void(0)"  class="text-dark" id="inline-approved-by" data-type="text" data-pk="1" data-title="Approved by:">TERESO A. ABELLA</a></span>
+                                </h4>
+
+                                <p style="font-size:12px; font-weight: bold;" class="d-flex justify-content-around">
+                                    <span><a style="all: initial; pointer-events:none; font-size:15px; font-family: 'Poppins', sans-serif" href="javascript:void(0)" href="javascript:void(0)" class="text-dark" id="inline-prepared-by-position" data-type="text" data-pk="1" data-title="Prepared by:">END-USER</a></span>
+                                   
+                                    <span><a style="all: initial; pointer-events:none; font-size:15px; font-family: 'Poppins', sans-serif" href="javascript:void(0)" href="javascript:void(0)"  class="text-dark" id="inline-recommending-approval-position" data-type="text" data-pk="1" data-title="recommending approval">VP for Academic Affairs</a></span>
+                                    <span><a style="all: initial; pointer-events:none; font-size:15px; font-family: 'Poppins', sans-serif" href="javascript:void(0)" href="javascript:void(0)"  class="text-dark" id="inline-approved-by-position" data-type="text" data-pk="1" data-title="Approved by:">University President</a></span>
+                                </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <% include partials/Right_sidebar %>
+                
+            </div>
+        </div>
+        
+        <% include partials/Footer %>
+    </div>
+    <% include partials/Other_plugins %>
+    <script src="controller/ppmp_view_CONTROLLER.js?v=19"></script>
+    <script src="controller/ppmp_view_item_CONTROLLER.js?v=21"></script>
+</body>
+</html>

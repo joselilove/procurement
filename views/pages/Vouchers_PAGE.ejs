@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+    <% include partials/HTMLhead_PAGEext %>
+<body onload="loadVouchers_FNCTN()" class="wp-menu skin-green-dark fixed-layout">
+     <% include partials/Preloader_ext %> 
+    <div id="main-wrapper">
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <% include partials/Logo %>
+
+                <div class="navbar-collapse">
+                    <% include partials/Toggle_ext %>
+                    <ul class="navbar-nav my-lg-0">
+                    <% include partials/Top_navbar %>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    
+    <% include partials/Sidebar %>
+
+    <div class="page-wrapper">
+            <div class="container-fluid">
+                    <div class="row page-titles">
+                            <div class="col-md-5 align-self-center">
+                                <h4 class="text-themecolor">Account Vouchers</h4>
+                            </div>
+                            <div class="col-md-7 align-self-center text-right">
+                                <div class="d-flex justify-content-end align-items-center">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/dashboardPage_route">Home</a></li>
+                                        <li class="breadcrumb-item active">Account Vouchers</li>
+                                    </ol>
+                                    <button type="button" class="btn btn-dark d-none d-lg-block m-l-15" data-toggle="modal" data-target="#AddVoucherFormModal_id"><i class="fa fa-plus-circle"></i> Add Voucher</button>
+                                </div>
+                            </div>
+                        </div>
+        
+
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <div class="row">
+                        <!-- column -->
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Vouchers</h4>
+                                    <div class="table-responsive m-t-40">
+        
+                                        <table id="VouchersDataTable_id" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0">    
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+
+
+
+
+
+
+
+
+                    
+                                <!-- sample modal content -->
+                                
+                                <div class="modal fade" id="AddVoucherFormModal_id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title" id="exampleModalLabel1">New Voucher</h4>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form>
+                                                    <div class="form-group">
+                                                        <input class="form-control" id="CodeInput_id" type="text" placeholder="Input code here">
+                                                    </div>
+                            
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary" onclick="addNewVoucher_FNCTN()">Add</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                
+                                
+                                
+                                <div class="modal fade" id="UpdateUserFormModal_id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title" id="exampleModalLabel1">Update User Info</h4>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form>
+                                                    <div class="form-group">
+                                                        <label for="recipient-name" class="control-label">Full Name:</label>
+                                                        <input class="form-control" id="UpdateNameInput_id" type="text">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="message-text" class="control-label">Username:</label>
+                                                        <input id="UpdateUsernameInput_id" class="form-control" type="text">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="message-text" class="control-label">Password:</label>
+                                                        <input id="UpdatePasswordInput_id" class="form-control" type="password"><br><br>
+                                                        <button type="button" onmousedown="showUpdateformPassword_FNCTN()" onmouseup="hideUpdateformPassword_FNCTN()" class="btn btn-warning">Show Password</button>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="message-text" class="control-label">User type:</label>
+                                                        <select id="UpdateusertypeSelect_id" class="form-control">
+                                                            <option value="Administrator" selected>Administrator</option>
+                                                            <option value="End-user">End-User</option>
+                                                        </select>
+                                                        <input type="hidden" id="UserToBeUpdated_id">
+                                                    </div>
+                                                    <div class="form-group">
+                                                            <label for="message-text" class="control-label">Position:</label>
+                                                            <textarea class="form-control" name="" id="UpdatePositionTextarea_id" cols="30" rows="10"></textarea>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="message-text" class="control-label">Main Organization Name:</label>
+                                                            <textarea class="form-control" name="" id="UpdateMainOrgNameTextarea_id" cols="30" rows="10"></textarea>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="message-text" class="control-label">Sub Organization Name:</label>
+                                                            <textarea class="form-control" name="" id="UpdateSubOrgNameTextarea_id" cols="30" rows="10"></textarea>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="message-text" class="control-label">Ext Organization Name:</label>
+                                                            <textarea class="form-control" name="" id="UpdateExtOrgNameTextarea_id" cols="30" rows="10"></textarea>
+                                                        </div>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-info" onclick="updateUser_FNCTN()">Update</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.modal -->
+                            
+            
+
+
+
+                                
+                            
+
+
+
+
+                    <!-- ============================================================== -->
+                    <!-- End PAge Content -->
+                    <!-- ============================================================== -->
+    <% include partials/Right_sidebar %>
+</div>
+</div>
+<br><br>
+<% include partials/Footer %>
+</div>
+<% include partials/Other_plugins %>
+    <script src="./controller/vouchersMngmt_CONTROLLER.js"></script>
+    <script src="./SomeAssetsNo1/SomeDeveloperDefinedjs/usersmanagement_SCRIPT.js"></script>
+    <script src="assets/node_modules/sweetalert/sweetalert.min.js"></script>
+    <script src="assets/node_modules/sweetalert/jquery.sweet-alert.custom.js"></script>
+    <script src="./SomeAssetsNo1/SomeDeveloperDefinedjs/someGlobalFunctionsNo1.js"></script>
+    
+    <!-- <script src="./SomeAssetsNo1/SomeDeveloperDefinedjs/jquery-3.3.1.js"></script> -->
+</body>
+</html>
+
+
+
+
+
+
+

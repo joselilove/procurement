@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="dist/css/ppmp_add_button.css" rel="stylesheet">
+    <% include partials/HTMLhead_PAGEext %>
+</head>
+
+<body class="wp-menu skin-green-dark fixed-layout">
+    <% include partials/Preloader_ext %>
+    <div id="main-wrapper">
+    
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+            <% include partials/Logo %>
+            <div class="navbar-collapse">
+                <% include partials/Toggle_ext %>
+                <ul class="navbar-nav my-lg-0">
+                    <% include partials/Top_navbar %>
+                </ul>
+            </div>
+            </nav>
+        </header>
+        
+        <% include partials/Sidebar %>
+        <div class="page-wrapper">
+        
+            <div class="container-fluid">
+            
+                <div class="row page-titles">
+                    <div class="col-md-5 align-self-center">
+                        <h4 class="text-themecolor">PPMP Modification Request</h4>
+                    </div>
+                    <div class="col-md-7 align-self-center text-right">
+                        <div class="d-flex justify-content-end align-items-center">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/dashboardPage_route">Home</a></li>
+                                <li class="breadcrumb-item active">PPMP Modification Request</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>            
+                              
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                            <div class="ribbon ribbon-bookmark  ribbon-default">Submitted PPMP's modification request</div>
+                            <div class="ribbon ribbon-bookmark ribbon-right ribbon-default"> <span id="total_submitted">1</span></div>
+                                        
+                                <br><br><br>
+                                <h4 class="card-title"></h4>
+                                <hr>
+                                <div class="row submitted-request">                                                                   
+                                 
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                        <div class="ribbon ribbon-bookmark ribbon-right ribbon-default">Current work</div>
+                        <div class="ribbon ribbon-bookmark ribbon-left ribbon-default"><span id="total_current_work">1</span></div>
+                        <br><br><br>
+
+                            <h4 class="card-title"></h4>
+                            <hr>
+                            <div class="row current-work">
+                            </div>
+
+                            
+                              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+                <% include partials/Right_sidebar %>
+               
+            </div>
+
+           
+                                <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
+                                    <div class="modal-dialog modal-xl">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title" id="myLargeModalLabel">Select PPMP to modify</h4>
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                            </div>
+                                            <div class="modal-body"><br><br>
+                    <div class="select-ppmp">
+                                <table id="myTable" class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Year</th>
+                                                <th>Date Submitted</th>
+                                                <th>Status</th>
+                                                <th>Type</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="select-ppmp-content">
+                                           
+                                        </tbody>
+                                    </table>
+
+                    </div>
+                                                
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-danger waves-effect text-left" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    
+                                    </div>
+                           
+                                </div>
+                          
+
+
+        </div>
+
+        <!-- sample modal content -->
+                                <div class="modal fade mod_req" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" style="display: none;">
+                                    <div class="modal-dialog modal-sm">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title" id="mySmallModalLabel">Reason (Optional)</h4>
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                            </div>
+                                            <div class="modal-body"> 
+
+                                                <form class="floating-labels m-t-40">
+                                                    <div class="form-group m-b-5">
+                                                        <textarea class="form-control" rows="4" id="remarks_submit"></textarea>
+                                                        <span class="bar"></span>
+                                                        <label for="input7">Click Here</label>
+                                                    </div>
+                                                </form>
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-danger waves-effect waves-light" onclick="submit_request()">Save changes</button>
+                                            </div>
+
+                                        </div>
+                                        <!-- /.modal-content -->
+                                    </div>
+                                    <!-- /.modal-dialog -->
+                                </div>
+                                <!-- /.modal -->
+
+            <div id="container-floating">
+
+                <div id="floating-button" data-toggle="modal" data-placement="left" data-target=".bs-example-modal-lg">
+                    <p class="plus">+</p>
+                    <img class="edit" src="assets/images/plus.png">
+                </div>
+
+            </div>
+          
+        <% include partials/Footer %>
+
+    </div>
+    
+    <% include partials/Other_plugins %>
+    <script src="controller/ppmp_mod_req_CONTROLLER.js"></script>
+</body>
+
+</html>

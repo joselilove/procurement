@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<% include partials/HTMLhead_PAGEext %>
+
+<body onload="loadUsersData_FNCTN()" class="wp-menu skin-blue-dark fixed-layout">
+    <% include partials/Preloader_ext %>
+    <div id="main-wrapper">
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <% include partials/Logo %>
+
+                <div class="navbar-collapse">
+                    <% include partials/Toggle_ext %>
+                    <ul class="navbar-nav my-lg-0">
+                        <% include partials/Top_navbar %>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <% include partials/Sidebar %>
+
+        <div class="page-wrapper">
+            <div class="container-fluid">
+                <div class="row page-titles">
+                    <div class="col-md-5 align-self-center">
+                        <h4 class="text-themecolor">PPMP Consolidation</h4>
+                    </div>
+                    <div class="col-md-7 align-self-center text-right">
+                        <div class="d-flex justify-content-end align-items-center">
+                            <ol class="breadcrumb">
+                                <!-- <li class="breadcrumb-item"><a href="javascript:void(0)">Management Features</a></li> -->
+                                <!-- <li class="breadcrumb-item active">Users Management</li> -->
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Set Consolidation Requirements</h4>
+                        <div class="row">
+                            <!-- column -->
+                            <!-- <div class="col-sm-4"> -->
+
+                            <span style="margin-right:10px">
+                                <select name="" id="ConsolidItemTypeSelect_id" class="selectpicker"
+                                    data-style="form-control btn-secondary">
+                                    <option>Select Item Type</option>
+                                    <option value="CSE items">CSE items</option>
+                                    <option value="Non-CSE items">Non-CSE items</option>
+                                    <option value="All items">All items</option>
+                                </select>
+                            </span>
+                            <!-- </div> -->
+                            <!-- <div class="col-sm-4"> -->
+                            <span style="margin-right:10px">
+                                <select id="ConsolidQuarterSelect_id" class="selectpicker m-b-20 m-r-10"
+                                    data-style="btn-primary">
+                                    <option>Select Quarter</option>
+                                    <option value="1st Quarter">1st Quarter</option>
+                                    <option value="2nd Quarter">2nd Quarter</option>
+                                    <option value="3rd Quarter">3rd Quarter</option>
+                                    <option value="4th Quarter">4th Quarter</option>
+                                </select>
+                            </span>
+                            <!-- </div> -->
+                            <!-- <div class="col-sm-4"> -->
+                            <span style="margin-right:10px">
+                                <select name="" id="" id="ConsolidYearSelect_id" class="selectpicker m-b-20"
+                                    data-style="btn-default">
+                                    <option>Select Year</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2010">2020</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2022">2022</option>
+                                </select>
+                            </span>
+                            <!-- </div> -->
+
+                            <!-- <div class="col-sm-4"> -->
+                            <span>
+                                <button type="button" class="btn btn-rounded btn-block btn-dark"
+                                    style="width:200px">Fetch</button>
+                                <!-- </div> -->
+                            </span>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+                <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title"></h4>
+                                    <!-- <h6 class="card-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6> -->
+                                    <div class="table-responsive m-t-40">
+                                        <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                                                <thead>
+                                                        <tr>
+                                                            <th></th>
+                                                            <th>ITEM</th>
+                                                            <th>Unit</th>
+                                                            <th>Price per Unit</th>
+                                                            <th>Total Quantity</th>
+                                                            <th>Total Amount</th>
+                                                            <th style="color:red">ASTS</th>
+                                                            <th style="color:red">BIOECH</th>
+                                                            <th style="color:red">CAG</th>
+                                                            <th style="color:red">CAS</th>
+                                                            <th style="color:red">CCLS</th>
+                                                            <th style="color:red">CED</th>
+                                                            <th style="color:red">CEN</th>
+                                                            <th style="color:red">CERDS</th>
+                                                            <th style="color:red">CF</th>
+                                                            <th style="color:red">CHSI</th>
+                                                            <th style="color:red">CTEC</th>
+                                                            <th style="color:red">CWTS</th>
+                                                            <th style="color:red">DOTUNI</th>
+                                                            <th style="color:red">ETEEAP</th>
+                                                            <th style="color:red">FAC</th>
+                                                            <th style="color:red">ICCEM</th>
+                                                            <th style="color:red">ISPEAR</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <tr>
+                                                                <td style="background-color:skyblue">Tiger Nixon</td>
+                                                                <td style="background-color:skyblue">System Architect</td>
+                                                                <td style="background-color:skyblue">Edinburgh</td>
+                                                                <td style="background-color:skyblue">61</td>
+                                                                <td style="background-color:skyblue">2011/04/25</td>
+                                                                <td style="background-color:skyblue">$320,800</td>
+                                                                <td style="color:red">10</td>
+                                                                <td style="color:red">12</td>
+                                                                <td style="color:red">13</td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            
+                                                            </tr>
+                                                            <tr>
+                                                                    <td style="background-color:skyblue">Tiger Nixon</td>
+                                                                    <td style="background-color:skyblue">System Architect</td>
+                                                                    <td style="background-color:skyblue">Edinburgh</td>
+                                                                    <td style="background-color:skyblue">61</td>
+                                                                    <td style="background-color:skyblue">2011/04/25</td>
+                                                                    <td style="background-color:skyblue">$320,800</td>
+                                                                    <td style="color:red">10</td>
+                                                                    <td style="color:red">12</td>
+                                                                    <td style="color:red">13</td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                
+                                                                </tr>
+                                                                <tr>
+                                                                        <td style="background-color:skyblue">Tiger Nixon</td>
+                                                                        <td style="background-color:skyblue">System Architect</td>
+                                                                        <td style="background-color:skyblue">Edinburgh</td>
+                                                                        <td style="background-color:skyblue">61</td>
+                                                                        <td style="background-color:skyblue">2011/04/25</td>
+                                                                        <td style="background-color:skyblue">$320,800</td>
+                                                                        <td style="color:red">10</td>
+                                                                        <td style="color:red">12</td>
+                                                                        <td style="color:red">13</td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                    
+                                                                    </tr>
+                                                                    <tr>
+                                                                            <td style="background-color:skyblue">Tiger Nixon</td>
+                                                                            <td style="background-color:skyblue">System Architect</td>
+                                                                            <td style="background-color:skyblue">Edinburgh</td>
+                                                                            <td style="background-color:skyblue">61</td>
+                                                                            <td style="background-color:skyblue">2011/04/25</td>
+                                                                            <td style="background-color:skyblue">$320,800</td>
+                                                                            <td style="color:red">10</td>
+                                                                            <td style="color:red">12</td>
+                                                                            <td style="color:red">13</td>
+                                                                            <td></td>
+                                                                            <td></td>
+                                                                            <td></td>
+                                                                            <td></td>
+                                                                            <td></td>
+                                                                            <td></td>
+                                                                            <td></td>
+                                                                            <td></td>
+                                                                            <td></td>
+                                                                            <td></td>
+                                                                            <td></td>
+                                                                            <td></td>
+                                                                            <td></td>
+                                                                            <td></td>
+                                                                        
+                                                                        </tr>
+                                                                        <tr>
+                                                                                <td style="background-color:skyblue">Tiger Nixon</td>
+                                                                                <td style="background-color:skyblue">System Architect</td>
+                                                                                <td style="background-color:skyblue">Edinburgh</td>
+                                                                                <td style="background-color:skyblue">61</td>
+                                                                                <td style="background-color:skyblue">2011/04/25</td>
+                                                                                <td style="background-color:skyblue">$320,800</td>
+                                                                                <td style="color:red">10</td>
+                                                                                <td style="color:red">12</td>
+                                                                                <td style="color:red">13</td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                            
+                                                                            </tr>
+                                                                            <tr>
+                                                                                    <td style="background-color:skyblue">Tiger Nixon</td>
+                                                                                    <td style="background-color:skyblue">System Architect</td>
+                                                                                    <td style="background-color:skyblue">Edinburgh</td>
+                                                                                    <td style="background-color:skyblue">61</td>
+                                                                                    <td style="background-color:skyblue">2011/04/25</td>
+                                                                                    <td style="background-color:skyblue">$320,800</td>
+                                                                                    <td style="color:red">10</td>
+                                                                                    <td style="color:red">12</td>
+                                                                                    <td style="color:red">13</td>
+                                                                                    <td></td>
+                                                                                    <td></td>
+                                                                                    <td></td>
+                                                                                    <td></td>
+                                                                                    <td></td>
+                                                                                    <td></td>
+                                                                                    <td></td>
+                                                                                    <td></td>
+                                                                                    <td></td>
+                                                                                    <td></td>
+                                                                                    <td></td>
+                                                                                    <td></td>
+                                                                                    <td></td>
+                                                                                    <td></td>
+                                                                                
+                                                                                </tr>
+                                                            
+                                                        </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+            </div>
+
+            
+
+
+
+
+
+
+
+            <!-- ============================================================== -->
+            <!-- End PAge Content -->
+            <!-- ============================================================== -->
+            <% include partials/Right_sidebar %>
+        </div>
+    </div>
+    <br><br>
+    <% include partials/Footer %>
+    </div>
+    <% include partials/Other_plugins %>
+    <script src="./controller/usersManagement_CONTROLLER.js"></script>
+    <script src="./SomeAssetsNo1/SomeDeveloperDefinedjs/usersmanagement_SCRIPT.js"></script>
+    <script src="assets/node_modules/sweetalert/sweetalert.min.js"></script>
+    <script src="assets/node_modules/sweetalert/jquery.sweet-alert.custom.js"></script>
+    <script src="./SomeAssetsNo1/SomeDeveloperDefinedjs/someGlobalFunctionsNo1.js"></script>
+    <style>
+        td{
+            padding-top:0px; 
+            padding-bottom:0px;
+        }
+    </style>
+    <!-- <script src="./SomeAssetsNo1/SomeDeveloperDefinedjs/jquery-3.3.1.js"></script> -->
+</body>
+
+</html>

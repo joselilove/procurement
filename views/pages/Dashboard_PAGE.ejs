@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/HTMLhead_PAGEext %>
+</head>
+
+<body class="wp-menu skin-green-dark fixed-layout">
+    <% include partials/Preloader_ext %>
+    
+    <div id="main-wrapper">
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <% include partials/Logo %>
+
+                <div class="navbar-collapse">
+                    <% include partials/Toggle_ext %>
+                    <ul class="navbar-nav my-lg-0">
+                    <% include partials/Top_navbar %>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <% include partials/Sidebar %>
+
+        <div class="page-wrapper">
+
+            <div class="container-fluid">
+
+                <div class="row page-titles">
+                    <div class="col-md-5 align-self-center">
+                        <h4 class="text-themecolor">Dashboard</h4>
+                    </div>
+                    <div class="col-md-7 align-self-center text-right">
+                        <div class="d-flex justify-content-end align-items-center">
+                             <ol class="breadcrumb">
+                                <li class="breadcrumb-item active">Dashboard</li>
+                            </ol> 
+                        </div>
+                    </div>
+                </div>
+
+                <% include partials/Status_info %>
+                            
+                <div class="row">
+                <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex m-b-40 align-items-center no-block">
+                                    <h4 class="card-title ">Annual Procurement Plan</h4>
+                                    <div class="ml-auto">
+                                        <ul class="list-inline font-15">
+                                            <li><i class="fa fa-circle" style="color:#55ce63"></i> ACAD</li>
+                                            <li><i class="fa fa-circle" style="color:#2f3d4a"></i> ADMIN</li>
+                                            <li><i class="fa fa-circle" style="color:#009efb"></i> UBAB</li>
+                                            <li><i class="fa fa-circle" style="color:#aa9efb"></i> RET</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div id="date_range" class="d-flex align-items-center justify-content-center">
+                                        <div class="col-sm-4">
+                                            <select class="select2 form-control custom-select" style="width: 100%; height:36px;" id="1st-year">
+                                            </select>
+
+                                        </div>
+                                        <button type="button" class="btn waves-effect waves-light btn-success" id="filter-year">Filter</button>
+                                        <div class="col-sm-4">
+                                            <select class="select2 form-control custom-select" style="width: 100%; height:36px;" id="2nd-year">
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                    <div class="col-md-12">
+                        <div class="card">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs customtab justify-content-center" role="tablist">
+                                <li class="nav-item"> <a class="nav-link active" data-toggle="tab" id="1st" href="#home1" role="tab"><span class="hidden-sm-up"><i class="ti-agenda"></i></span> <span class="hidden-xs-down">1st Quarter</span></a> </li>
+                                <li class="nav-item"> <a class="nav-link" data-toggle="tab" id="2nd" href="#home2" role="tab"><span class="hidden-sm-up"><i class="ti-agenda"></i></span> <span class="hidden-xs-down">2nd Quarter</span></a> </li>
+                                <li class="nav-item"> <a class="nav-link" data-toggle="tab" id="3rd" href="#home3" role="tab"><span class="hidden-sm-up"><i class="ti-agenda"></i></span> <span class="hidden-xs-down">3rd Quarter</span></a> </li>
+                                <li class="nav-item"> <a class="nav-link" data-toggle="tab" id="4th" href="#home4" role="tab"><span class="hidden-sm-up"><i class="ti-agenda"></i></span> <span class="hidden-xs-down">4th Quarter</span></a> </li>
+                            </ul>
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="home1" role="tabpanel">  
+                                        <div class="card-body">
+                                        <center><h1 class="font-weight-bold">1st Quarter</h1></center>
+                                        
+                                        </div>
+                                </div>
+                                <div class="tab-pane" id="home2" role="tabpanel">
+                                        <div class="card-body">
+                                        <center><h1 class="font-weight-bold">2nd Quarter</h1></center>
+                                            
+                                        </div>
+                                </div>
+                                <div class="tab-pane" id="home3" role="tabpanel">
+                                        <div class="card-body">
+                                        <center><h1 class="font-weight-bold">3rd Quarter</h1></center>
+                                            
+                                        </div>
+                                </div>
+                                <div class="tab-pane" id="home4" role="tabpanel">
+                                        <div class="card-body">
+                                        <center><h1 class="font-weight-bold">4th Quarter</h1></center>
+                                            
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="morris-bar-chart"></div>
+                    </div>
+                                    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                 <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                        <ul class="list-inline font-15 text-right">
+                                            <li><i class="fa fa-circle" style="color:#55ce63"></i> ACAD</li>
+                                            <li><i class="fa fa-circle" style="color:#2f3d4a"></i> ADMIN</li>
+                                            <li><i class="fa fa-circle" style="color:#009efb"></i> UBAB</li>
+                                            <li><i class="fa fa-circle" style="color:#aa9efb"></i> RET</li>
+                                        </ul>
+                                <div id="extra-area-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- column -->
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <ul class="list-inline font-15 text-right">
+                                            <li><i class="fa fa-circle" style="color:#55ce63"></i> ACAD</li>
+                                            <li><i class="fa fa-circle" style="color:#2f3d4a"></i> ADMIN</li>
+                                            <li><i class="fa fa-circle" style="color:#009efb"></i> UBAB</li>
+                                            <li><i class="fa fa-circle" style="color:#aa9efb"></i> RET</li>
+                                        </ul>
+                                <div id="morris-area-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- column -->
+                    <!-- column -->
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                        <ul class="list-inline font-15 text-right">
+                                            <li><i class="fa fa-circle" style="color:#55ce63"></i> ACAD</li>
+                                            <li><i class="fa fa-circle" style="color:#2f3d4a"></i> ADMIN</li>
+                                            <li><i class="fa fa-circle" style="color:#009efb"></i> UBAB</li>
+                                            <li><i class="fa fa-circle" style="color:#aa9efb"></i> RET</li>
+                                        </ul>
+                                <div id="morris-area-chart2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <% include partials/Right_sidebar %>
+            </div>
+            
+        </div>
+        
+    <% include partials/Footer %>
+        
+    </div>
+    
+    <% include partials/Other_plugins %>
+    <script src="../assets/node_modules/raphael/raphael-min.js"></script>
+    <script src="../assets/node_modules/morrisjs/morris.js"></script>
+    <script src="controller/bar_chart_CONTROLLER.js"></script>
+</body>
+
+</html>

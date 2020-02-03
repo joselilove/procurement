@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+    <% include partials/HTMLhead_PAGEext %>
+<body onload="loadItemsData_FNCTN()" class="wp-menu skin-green-dark fixed-layout">
+    <% include partials/Preloader_ext %> 
+    <div id="main-wrapper">
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <% include partials/Logo %>
+
+                <div class="navbar-collapse">
+                    <% include partials/Toggle_ext %>
+                    <ul class="navbar-nav my-lg-0">
+                    <% include partials/Top_navbar %>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    <% include partials/Sidebar %>
+    <div class="page-wrapper">
+        <div class="container-fluid">
+            <div class="row page-titles">
+                <div class="col-md-5 align-self-center">
+                    <h4 class="text-themecolor">Procurement Items</h4>
+                </div>
+                <div class="col-md-7 align-self-center text-right">
+                    <div class="d-flex justify-content-end align-items-center">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/dashboardPage_route">Home</a></li>
+                            <li class="breadcrumb-item active">Procurement Items</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <!-- column -->
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Items Data</h4>
+                                <div class="table-responsive m-t-40">
+                                    
+                                        <input type="text" id="SearchBarInput_id" placeholder="Enter keyword here" style="height: 35px; width:400px">
+                                        
+                                        <button class="btn btn-info" onclick="searchItem_FNCTN()">Search</button>
+                                        
+                                        <select data-style="btn-warning " id="FilterBySelect_id" style="height: 35px;">
+                                            <option value="All" selected>All</option>
+                                            <option value="Item Type">Item Type</option>
+                                            <option value="Category">Category</option>
+                                            <option value="Sub Category">Sub Category</option>
+                                            <option value="General Description">General Description</option>
+                                            <option value="Units">Units</option>
+                                            <option value="Unit Price">Unit Price</option>
+                                            <option value="Mode of Procurement">Mode of Procurement</option>       
+                                        </select>
+                                        <!-- <div class="row pt-3">
+                                            <div class="col-md-5">
+                                                <div class="form-group has-success">
+                                                    <input class="form-control" type="text" id="SearchBarInput_id" placeholder="Enter keyword here">
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-md-1">
+                                                <div class="form-group">
+                                                   <button class="btn btn-info" onclick="searchItem_FNCTN()">Search</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                   <select class="selectpicker m-b-20 m-r-10" data-style="btn-warning " id="FilterBySelect_id">
+                                                    <option value="All" selected>All</option>
+                                                    <option value="Item Type">Item Type</option>
+                                                    <option value="Category">Category</option>
+                                                    <option value="Sub Category">Sub Category</option>
+                                                    <option value="General Description">General Description</option>
+                                                    <option value="Units">Units</option>
+                                                    <option value="Unit Price">Unit Price</option>
+                                                    <option value="Mode of Procurement">Mode of Procurement</option>       
+                                                </select>
+                                                </div>
+                                            </div>
+                                             <div class="col-md-2">
+                                                <div class="form-group">
+            
+                                                   <div class="custom-control custom-checkbox mr-sm-2 mb-3">
+                                                    <input type="checkbox" class="custom-control-input" id="checkbox0" value="check">
+                                                    <label class="custom-control-label" for="checkbox0">Search on Result</label>
+                                                </div>
+                                                </div>
+                                            </div> 
+                                            
+                                            
+                                            
+                                        </div> -->
+                                        <div class="row pt-3">
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <select class="selectpicker m-b-20 m-r-10" data-style="btn-danger" name="" id="FilterByItemTypeSelect_id" onchange="filterItemUsingItemType_FNCTN()">
+                                                        <option value="none">Select Item Type</option>
+                                                        <option value="Non-CSE">Non-CSE</option>
+                                                        <option value="CSE">CSE</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row pt-3">
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <input class="form-control" type="number" placeholder="Enter minimum" id="UnitPriceMinInput_id">
+                                                    <input class="form-control" type="number" placeholder="Enter maximum" id="UnitPriceMaxInput_id">
+                                                    <button class="btn btn-success" onclick="filterItemUsingUnitPrice_FNCTN()">Filter Price</button>
+
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    
+                                    <table id="ItemsDataTable_id" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">    
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                <!-- sample modal content -->
+                <div class="button-box">
+                    <button id="AddUserBtn1_id" type="button" class="btn btn-primary" data-toggle="modal" data-target="#AddItemFormModal_id">Add New Item</button>
+                </div>
+                <div class="modal fade" id="AddItemFormModal_id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="exampleModalLabel1">New Item</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="control-label">Item Type:</label>
+                                        <select id="itemtypeSelect_id" class="form-control">
+                                            <option value="Non-CSE" selected>Non-CSE</option>
+                                            <option value="CSE">CSE</option>
+                                            
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="message-text" class="control-label">Category:</label>
+                                        <textarea class="form-control" name="" id="CategoryTextarea_id" cols="30" rows="10" ></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="message-text" class="control-label">Sub Category:</label>
+                                        <textarea class="form-control" name="" id="SubCategoryTextarea_id" cols="30" rows="10" ></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="message-text" class="control-label">General Description:</label>
+                                        <textarea class="form-control" name="" id="GenDesTextarea_id" cols="30" rows="10" ></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="message-text" class="control-label">Unit:</label>
+                                        <input class="form-control" type="text" id="UnitsInput_id" >
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="message-text" class="control-label">Unit Price:</label>
+                                        <input class="form-control" type="number" id="UnitPriceInput_id" >
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="message-text" class="control-label">Procurement Mode:</label>
+                                        <textarea name="" class="form-control" id="ProcModeTextarea_id" cols="30" rows="5"></textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" onclick="addNewItem_FNCTN()">Add Item</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+
+
+                <div class="modal fade" id="UpdateItemFormModal_id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="exampleModalLabel1">Update Item Info</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="control-label">Item Type:</label>
+                                        <select id="UpdateitemtypeSelect_id" class="form-control">
+                                            <option value="Non-CSE" >Non-CSE</option>
+                                            <option value="CSE">CSE</option>
+                                            <option value="Custom PPMP">Custom PPMP</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="message-text" class="control-label">Category:</label>
+                                        <textarea class="form-control" name="" id="UpdateCategoryTextarea_id" cols="30" rows="10" ></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="message-text" class="control-label">Sub Category:</label>
+                                        <textarea class="form-control" name="" id="UpdateSubCategoryTextarea_id" cols="30" rows="10" ></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="message-text" class="control-label">General Description:</label>
+                                        <textarea class="form-control" name="" id="UpdateGenDesTextarea_id" cols="30" rows="10" ></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="message-text" class="control-label">Unit:</label>
+                                        <input class="form-control" type="text" id="UpdateUnitsInput_id" >
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="message-text" class="control-label">Unit Price:</label>
+                                        <input class="form-control" type="number" id="UpdateUnitPriceInput_id" >
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="message-text" class="control-label">Procurement Mode:</label>
+                                        <textarea name="" class="form-control" id="UpdateProcModeTextarea_id" cols="30" rows="5"></textarea>
+                                        <input type="hidden" id="ItemToBeUpdated_id">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" onclick="updateItem_FNCTN()" >Update Item</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+
+
+
+
+
+                    <!-- ============================================================== -->
+                    <!-- End PAge Content -->
+                    <!-- ============================================================== -->
+                    <% include partials/Right_sidebar %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+</div>
+<br><br>
+<% include partials/Footer %>
+</div>
+<% include partials/Other_plugins %>
+<script src="./SomeAssetsNo1/SomeDeveloperDefinedjs/itemsmanagement_SCRIPT.js"></script>
+    <script src="./controller/itemsManagement_CONTROLLER.js"></script>
+    <script src="./controller/itemsManagementSearchFunctions_CONTROLLER.js"></script>
+    <script src="assets/node_modules/sweetalert/sweetalert.min.js"></script>
+    <script src="assets/node_modules/sweetalert/jquery.sweet-alert.custom.js"></script>
+    <script src="./SomeAssetsNo1/SomeDeveloperDefinedjs/someGlobalFunctionsNo1.js"></script>
+    
+</body>
+</html>

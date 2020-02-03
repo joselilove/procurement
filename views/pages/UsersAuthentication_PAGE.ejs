@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+    <% include partials/HTMLhead_PAGEext %>
+<link href="dist/css/login_style.css" rel="stylesheet">
+<body class="skin-default card-no-border">
+    <% include partials/Preloader_ext %>
+    <section id="wrapper">
+        <div class="login-register" style="background-image:url(assets/images/background/login_register2.png);">
+                <div class="wrapper">
+                
+                <div id="formContent" style="border-radius: 6px;">
+                
+                 <div class="card" style="border-radius: 6px;">
+                <div class="card-body" style="margin-top:-100px">
+                <img src="/assets/images/CLSU_Logo.png" width="150">
+    
+                    <form class="form-horizontal form-material" id="loginform" action="">
+                        
+                        <h3 class="text-center m-b-20">Sign In</h3>
+                        
+                        <div class="form-group ">
+                            <div class="col-xs-12">
+                                <input class="form-control" type="text" required="" placeholder="Username" id="UsernameInput_id" value="" autocomplete="off"> </div>
+                        </div>
+                        <div class="form-group" style="margin-left: 25px; margin-right: 25px">
+                            <div class="col-xs-2">
+                                <input class="form-control text-center" type="password" required="" placeholder="Password" id="PasswordInput_id" value=""> </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <div class="d-flex no-block align-items-center">
+                                    <div class="ml-auto">
+                                        <a href="javascript:void(0)" id="to-recover" class="text-muted"><i class="fas fa-lock m-r-5"></i> Forgot pwd?</a> 
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+                        
+                        <div class="form-group text-center">
+                            <div class="col-xs-12 p-b-20">
+                                <button class="btn btn-block btn-lg btn-success btn-rounded" type="button" onclick="userLogin_FNCTN()">Log In</button>
+                            </div>
+                        </div>
+                      
+                        <div class="form-group m-b-0">
+                            <div class="col-sm-12 text-center">
+                                Don't have an account? <a href="/usersRegistrationPage_route" class="text-info m-l-5"><b>Sign Up</b></a>
+                            </div>
+                        </div>
+                    </form>
+                    <form class="form-horizontal" id="recoverform" action="/send-email" method="post">
+                        <div class="form-group ">
+                            <div class="col-xs-12">
+                                <h3>Recover Password</h3>
+                                <p class="text-muted">Enter your Email and instructions will be sent to you! </p>
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <div class="col-xs-12">
+                                <input class="form-control" type="email" required="" placeholder="Email" name="to"> </div>
+                        </div>
+                        <div class="form-group text-center m-t-20">
+                            <div class="col-xs-12">
+                                <button type="submit" class="btn btn-primary btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Reset</button>
+                            </div>
+                            <a href="/usersAuthenticationPage_route">Back</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+                 
+
+                </div>
+                </div>
+        </div>
+        
+    </section>
+    
+    <% include partials/LoginRegister_ext %>
+    <% include partials/Alert_plugins %>
+</body>
+<script src="./controller/usersAuthentication_CONTROLLER.js"></script>
+<script>
+function invalid_login(){
+    swal({   
+        title: "Invalid Username or Password!",   
+        text: "Please check your username and password.",   
+        timer: 2000,   
+        showConfirmButton: false 
+    });
+    }
+</script>
+</html>

@@ -1,0 +1,81 @@
+<!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- User Profile-->
+
+
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                    <li class="nav-small-cap"></li>
+                        <li> <a class="admin waves-effect waves-dark" href="/dashboardPage_route" aria-expanded="false"><i class="icon-speedometer"></i><span class="hide-menu">Dashboard</span></a>
+
+                        </li>
+                        <li> <a class="end-user waves-effect waves-dark" href="/end_user_dashboard_ROUTE" aria-expanded="false"><i class="icon-speedometer"></i><span class="hide-menu">Dashboard</span></a>
+
+                        </li>
+
+                        <li> <a class="waves-effect waves-dark" href="/select_ppmpPage_route" aria-expanded="false"><i class="mdi mdi-animation"></i><span class="hide-menu">PPMP</span></a>
+
+                        </li>
+
+                        <li> <a class="end-user waves-effect waves-dark" href="/ppmp_mod_req_ROUTE" aria-expanded="false"><i class="icon-note"></i><span class="hide-menu">PPMP mod request</span></a>
+
+                        </li>
+
+                        <li> <a class="admin waves-effect waves-dark" href="/select_appPage_route" aria-expanded="false"><i class="mdi mdi-arrow-compress-all"></i><span class="hide-menu">APP</span></a>
+
+                        </li>
+                        <li> <a class="admin waves-effect waves-dark" href="/PMRselectionPage_route" aria-expanded="false"><i class="mdi mdi-monitor"></i><span class="hide-menu">PMR</span></a>
+
+                        </li>
+
+                        <li> <a class="admin waves-effect waves-dark" href="/itemsManagementPage_route" aria-expanded="false"><i class="mdi mdi-treasure-chest"></i><span class="hide-menu">Procurement Items</span></a>
+
+                        </li>
+                        <li> <a class="admin waves-effect waves-dark" href="/usersManagementPage_route" aria-expanded="false"><i class="fas fa-users"></i><span class="hide-menu">System Users</span></a>
+
+                        </li>
+                        <li> <a class="admin waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="icon-speech"></i><span class="hide-menu">Approval</span></a>
+                                    <ul aria-expanded="false" class="collapse">
+                                        <li><a href="/ppmp_approval_ROUTE">PPMP Approval</a></li>
+                                        <li><a href="/ppmp_mod_approval_ROUTE"> <small>PPMP Modification Approval</small> </a></li>
+                                    </ul>
+                        </li>
+                        <li> <a class="end-user waves-effect waves-dark" href="/EnduserPOPage_route" aria-expanded="false"><i class="mdi mdi-file-document-box"></i><span class="hide-menu">My PO</span></a>
+
+                        </li>
+
+                        <li> <a class="admin waves-effect waves-dark" href="/AnnouncementsPage_route" aria-expanded="false"><i class=" fas fa-bullhorn"></i><span class="hide-menu">Announcement Management</span></a>
+
+                        </li>
+                        <li> <a class="admin waves-effect waves-dark" href="/VouchersPage_route" aria-expanded="false"><i class="mdi mdi-ticket"></i><span class="hide-menu">System Account Vouchers</span></a>
+
+                        </li>
+                        <!--
+                        <li><a class="waves-effect waves-dark" href="/userLogout_route" aria-expanded="false"><i class="fa fa-power-off"></i><span class="hide-menu">Logout</span></a>
+                        
+                        </li>
+                        -->
+
+
+                    </ul>
+                </nav>
+                </div>
+                <!-- End Sidebar navigation -->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <script src="assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
+        <script src="controller/sidebar_CONTROLLER.js"></script>
+
+        <script>
+          $('.icon-menu').hide();
+          //$('.theme-settings').hide();
+          $('.sidebartoggler').click(false);
+          $('.sidebartoggler').css({"pointer-events": "none"});
+        </script>

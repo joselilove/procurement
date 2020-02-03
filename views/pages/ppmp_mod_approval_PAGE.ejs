@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/HTMLhead_PAGEext %>
+</head>
+
+<body class="wp-menu skin-green-dark fixed-layout">
+    <% include partials/Preloader_ext %>
+    <div id="main-wrapper">
+    
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+            <% include partials/Logo %>
+            <div class="navbar-collapse">
+                <% include partials/Toggle_ext %>
+                <ul class="navbar-nav my-lg-0">
+                    <% include partials/Top_navbar %>
+                </ul>
+            </div>
+            </nav>
+        </header>
+        
+        <% include partials/Sidebar %>
+        <div class="page-wrapper">
+        
+            <div class="container-fluid">
+            
+                <div class="row page-titles">
+                    <div class="col-md-5 align-self-center">
+                        <h4 class="text-themecolor">PPMP Modification Approval</h4>
+                    </div>
+                    <div class="col-md-7 align-self-center text-right">
+                        <div class="d-flex justify-content-end align-items-center">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/dashboardPage_route">Home</a></li>
+                                <li class="breadcrumb-item active">PPMP Modification Approval</li>
+                            </ol>    
+                        </div>
+                    </div>
+                </div>
+                
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="ribbon ribbon-bookmark  ribbon-default">PPMP Request</div>
+                            <div class="ribbon ribbon-bookmark ribbon-right ribbon-default">Pending Request: <span id="pending"> 1</span></div>
+                            <br>
+                            <hr>
+                            <table id="myTable" class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>End-User name</th>
+                                                <th>Program</th>
+                                                <th>Department</th>
+                                                <th>Year</th>
+                                                <th>Type</th>
+                                                <th>Date Requested</th>
+                                                <th>Status</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="submitted-content">
+                                        <!--
+                                            <tr>
+                                                <th>Joselin T. Macayanan</th>
+                                                <th>ACAD</th>
+                                                <th>CAS</th>
+                                                <th>2019</th>
+                                                <th>Non-CSE</th>
+                                                <th>2019-04-19 08:03:09</th>
+                                                <th>
+                                                    <div class="label label-table label-success">Approved</div>
+                                                </th>
+                                                <th>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            <i class="ti-settings"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu animated bounce">
+                                                            <a class="dropdown-item" href="javascript:void(0)">Approved</a>
+                                                            <a class="dropdown-item" href="javascript:void(0)">Declined</a>
+                                                            <a class="dropdown-item" href="javascript:void(0)">Reverse</a>
+                                                            <a class="dropdown-item" href="javascript:void(0)">View Requested change</a>
+                                                            <a class="dropdown-item" href="javascript:void(0)">View previous PPMP</a>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th>Jasmin D. Lazaro</th>
+                                                <th>ACAD</th>
+                                                <th>CAS</th>
+                                                <th>2019</th>
+                                                <th>CSE</th>
+                                                <th>2019-04-19 08:03:09</th>
+                                                <th>
+                                                    <span class="label label-warning">Pending</span>
+                                                </th>
+                                                <th>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            <i class="ti-settings"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu animated bounce">
+                                                            <a class="dropdown-item" href="javascript:void(0)">Approved</a>
+                                                            <a class="dropdown-item" href="javascript:void(0)">Declined</a>
+                                                            <a class="dropdown-item" href="javascript:void(0)">Reverse</a>
+                                                            <a class="dropdown-item" href="javascript:void(0)">View Requested change</a>
+                                                            <a class="dropdown-item" href="javascript:void(0)">View previous PPMP</a>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th>Rosalie Silvestre</th>
+                                                <th>ACAD</th>
+                                                <th>CAS</th>
+                                                <th>2019</th>
+                                                <th>Non-CSE</th>
+                                                <th>2019-04-19 08:03:09</th>
+                                                <th>
+                                                    <span class="label label-danger">Declined</span>
+                                                </th>
+                                                <th>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            <i class="ti-settings"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu animated bounce">
+                                                            <a class="dropdown-item" href="javascript:void(0)">Approved</a>
+                                                            <a class="dropdown-item" href="javascript:void(0)">Declined</a>
+                                                            <a class="dropdown-item" href="javascript:void(0)">Reverse</a>
+                                                            <a class="dropdown-item" href="javascript:void(0)">View Requested change</a>
+                                                            <a class="dropdown-item" href="javascript:void(0)">View previous PPMP</a>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                            -->
+                                        </tbody>
+                                    </table>
+
+                        </div>
+                    </div> 
+                </div>             
+            </div>             
+            
+                            <!-- sample modal content -->
+                                <div class="modal fade bs-example-modal-sm1" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" style="display: none;">
+                                    <div class="modal-dialog modal-sm">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title" id="mySmallModalLabel">Reason why you approving this request (Optional)</h4>
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                            </div>
+                                            <div class="modal-body"> 
+
+                                                <form class="floating-labels m-t-40">
+                                                    <div class="form-group m-b-5">
+                                                        <textarea class="form-control" rows="4" id="remarks_approved"></textarea>
+                                                        <span class="bar"></span>
+                                                        <label for="input7">Click Here</label>
+                                                    </div>
+                                                </form>
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-danger waves-effect waves-light" onclick="approved_mod_req();">Save changes</button>
+                                            </div>
+
+                                        </div>
+                                        <!-- /.modal-content -->
+                                    </div>
+                                    <!-- /.modal-dialog -->
+                                </div>
+                                <!-- /.modal -->
+
+                                <!-- sample modal content -->
+                                <div class="modal fade bs-example-modal-sm2" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" style="display: none;">
+                                    <div class="modal-dialog modal-sm">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title" id="mySmallModalLabel">Reason why you declining this request (Optional)</h4>
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                            </div>
+                                            <div class="modal-body"> 
+
+                                                <form class="floating-labels m-t-40">
+                                                    <div class="form-group m-b-5">
+                                                        <textarea class="form-control" rows="4" id="remarks_declined"></textarea>
+                                                        <span class="bar"></span>
+                                                        <label for="input7">Click Here</label>
+                                                    </div>
+                                                </form>
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-danger waves-effect waves-light" onclick="declined_mod_req();">Save changes</button>
+                                            </div>
+
+                                        </div>
+                                        <!-- /.modal-content -->
+                                    </div>
+                                    <!-- /.modal-dialog -->
+                                </div>
+                                <!-- /.modal -->
+                <% include partials/Right_sidebar %>
+               
+            </div>
+
+        </div>
+          
+        <% include partials/Footer %>
+
+    </div>
+    
+    <% include partials/Other_plugins %>
+    
+    <script src="controller/ppmp_mod_approval_CONTROLLER.js?v=1"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/HTMLhead_PAGEext %>
+</head>
+
+<body class="wp-menu skin-green-dark fixed-layout" onload="loadEnduserPO()">
+    <% include partials/Preloader_ext %>
+
+    <div id="main-wrapper">
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <% include partials/Logo %>
+
+                <div class="navbar-collapse">
+                    <% include partials/Toggle_ext %>
+                    <ul class="navbar-nav my-lg-0">
+                        <% include partials/Top_navbar %>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <% include partials/Sidebar %>
+
+        <div class="page-wrapper">
+
+            <div class="container-fluid">
+
+                <div class="row page-titles">
+                    <div class="col-md-5 align-self-center">
+                        <h4 class="text-themecolor">My Purchase Order list</h4>
+                    </div>
+                    <div class="col-md-7 align-self-center text-right">
+                        <div class="d-flex justify-content-end align-items-center">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/dashboardPage_route">Home</a></li>
+                                <li class="breadcrumb-item active">My PO</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+            
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- <h4 class="card-title">Dark Table</h4> -->
+                            <h6 class="card-subtitle">
+                                <svg class="bd-placeholder-img rounded mr-2" width="20" height="20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect fill="#4db8ff" width="100%" height="100%"></rect></svg>
+                                <label for="">Awarded</label>
+                            </h6>
+                            <h6>
+                                <svg class="bd-placeholder-img rounded mr-2" width="20" height="20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect fill="#66ffb3" width="100%" height="100%"></rect></svg>
+                                <label for="">Delivered</label>
+                            </h6><br>
+                            <div class="table-responsive">
+                                <table class="table color-bordered-table dark-bordered-table">
+                                    <thead>
+                                        <tr>
+                                            <th>PO#</th>
+                                            <th>Item Purchase</th>
+                                            <th>Procurement Program or Project</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="End-userPOsTeble_id">
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                
+
+<!-- sample modal content -->
+<div id="EnduserPOdetailsmodal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="POlabelOnModal">Modal Heading</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body">
+                    <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <tbody id="EnduserPOdetailstable">
+                                  
+                                </tbody>
+                            </table>
+                        </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info waves-effect" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+
+            </div>
+
+        </div>
+
+        <% include partials/Footer %>
+
+    </div>
+
+    <% include partials/Other_plugins %>
+    
+    <script src="./controller/EnduserPO_CONTROLLER.js"></script>
+    
+</body>
+
+</html>

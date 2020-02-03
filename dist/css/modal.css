@@ -1,0 +1,103 @@
+
+.modal-body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.modal {
+  background: #f8f9fa;
+  height: 1px;
+  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: width 0.5s ease 0.5s,  height 0.5s ease;
+  transition: width 0.5s ease 0.5s,  height 0.5s ease;
+  width: 0;
+}
+
+.content {
+  color: transparent;
+  font-family: 'Consolas', arial, sans-serif;
+  font-size: 2em;
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  -webkit-transform: translate3d(0, -50%, 0);
+          transform: translate3d(0, -50%, 0);
+  -webkit-transition: color 0.5s ease;
+  transition: color 0.5s ease;
+  width: 100%;
+}
+
+label {
+  color: dodgerblue;
+  cursor: pointer;
+  font-family: 'Consolas', arial, sans-serif;
+  font-size: 2em;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  text-transform: uppercase;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: color 0.5s ease 0.5s;
+  transition: color 0.5s ease 0.5s;
+}
+
+input {
+  cursor: pointer;
+  height: 0;
+  opacity: 0;
+  width: 0;
+}
+input:focus {
+  outline: none;
+}
+
+input:checked {
+  height: 40px;
+  opacity: 1;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 1;
+  -webkit-appearance: none;
+  width: 40px;
+}
+input:checked::after, input:checked:before {
+  border-top: 1px solid #081316;
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  width: 100%;
+}
+input:checked::after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+input:checked + label {
+  color: #081316;
+  -webkit-transition: color 0.5s ease;
+  transition: color 0.5s ease;
+}
+
+input:checked ~ .modal {
+  height: 100%;
+  width: 100%;
+  -webkit-transition: width 0.5s ease,  height 0.5s ease 0.5s;
+  transition: width 0.5s ease,  height 0.5s ease 0.5s;
+}
+input:checked ~ .modal .content {
+  color: #081316;
+  -webkit-transition: color 0.5s ease 0.5s;
+  transition: color 0.5s ease 0.5s;
+}

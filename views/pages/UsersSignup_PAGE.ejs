@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/HTMLhead_PAGEext %>
+</head>
+
+<body class="skin-default card-no-border" style="background-image:url(assets/images/background/login_register.jpeg); background-size: cover;">
+    <% include partials/Preloader_ext %>
+    <section id="wrapper">
+    <!--    <div class="login-register" style="background-image:url(../assets/images/background/login_register2.png);">-->
+        <br><br>    
+        <div class="login-box card" style="border-radius: 6px; margin-top:100px">
+                <div class="card-body" style="margin-top:-100px"> 
+                <center><img src="/assets/images/CLSU_Logo.png" width="150"></center>
+                    <form class="form-horizontal form-material" id="loginform" action="">
+                        <h3 class="text-center m-b-20">Sign Up</h3>
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <input class="form-control" type="text" id="SignupNameInput_id" placeholder="Name">
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <div class="col-xs-12">
+                                <input class="form-control" type="text" id="SignupEmailInput_id" required="" placeholder="Email" onkeyup="checkUserAttributeExistence(this.value,'email')">
+                                <span id="emailExistence"></span>
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <div class="col-xs-12">
+                                <input class="form-control" type="text" id="SignupUsernameInput_id" required="" placeholder="Username" onkeyup="checkUserAttributeExistence(this.value,'username')">
+                                <span id="usernameExistence"></span>
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <div class="col-xs-12">
+                                <input class="form-control" type="password" id="SignupPasswordInput_id" required="" placeholder="Password" onkeyup="CheckPasswordStrength(this.value)" >
+                                <span id="password_strength"></span><br>
+                                <span id="passwordExistence"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <input class="form-control" type="password" id="SignupConfirmPasswordInput_id" required="" placeholder="Confirm Password">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12">
+    
+                                <textarea class="form-control" required="" name="" id="SignupPositionTextarea_id" cols="30" rows="3" placeholder="Position"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12">
+
+                                <textarea class="form-control" required="" name="" id="SignupMainOrgNameTextarea_id" cols="30" rows="3" placeholder="Main Organization Name"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                
+                                <textarea required="" placeholder="Sub Organization Name" class="form-control" name="" id="SignupSubOrgNameTextarea_id" cols="30" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                
+                                <textarea required="" placeholder="Ext Organization Name" class="form-control" name="" id="SignupExtOrgNameTextarea_id" cols="30" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" id="SignupVoucherInput_id" placeholder="Account Voucher Here">
+                        </div>
+                        <div class="form-group text-center p-b-20">
+                            <div class="col-xs-12">
+                                <button class="btn btn-success btn-lg btn-block btn-rounded text-uppercase waves-effect waves-light" type="button" onclick="userSignup_FNCTN()">Sign Up</button>
+                            </div>
+                        </div>
+                        <div class="form-group m-b-0">
+                            <div class="col-sm-12 text-center">
+                                Already have an account? <a href="/usersAuthenticationPage_route" class="text-info m-l-5"><b>Sign In</b></a>
+                            </div>
+                        </div>
+                    </form>
+                 </div>
+            </div>
+       <!-- </div> -->
+    </section> 
+    
+    <% include partials/LoginRegister_ext %>
+    <% include partials/Alert_plugins %>
+    <script src="./controller/usersRegistration_CONTROLLER.js"></script>
+</body>
+
+</html>
