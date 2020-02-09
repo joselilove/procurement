@@ -7,11 +7,11 @@ app.use(bodyParser.json());
 
 const mysql = require('mysql');
 const mc = mysql.createConnection({
-    host: '127.0.0.1',
+    host: 'remotemysql.com',
     port: 3306,
-	user: 'root',
-	password: '',
-    database: 'clsupss_v2',
+	user: '06mRCeMcht',
+	password: 'fG9fFHhXpL',
+    database: '06mRCeMcht',
     dateStrings:true
 });
 
