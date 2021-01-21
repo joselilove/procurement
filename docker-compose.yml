@@ -1,0 +1,32 @@
+version: "3.3"
+
+services:
+  # Uncomment this if you do not have a node js install
+  # app:
+  #   container_name: procurement-app
+  #   hostname: "procurement.app"
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "3400:8000"
+  #   depends_on:
+  #     - procurement-mysql
+  #   networks:
+  #     - procurement-network
+
+  procurement-mysql:
+    container_name: procurement-mysql
+    image: mysql:5.6.47
+    hostname: procurement-mysql
+    ports:
+      - "33108:3306"
+    environment:
+      - MYSQL_DATABASE=clsupss
+      - MYSQL_ROOT_PASSWORD=password
+    networks:
+      - procurement-network
+
+networks:
+  procurement-network:
+    driver: bridge

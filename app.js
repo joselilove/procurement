@@ -4,8 +4,8 @@ var session = require('express-session');
 const app = express();
 const nodeMailer = require('nodemailer');
 const port = ( process.env.PORT || 8000 );
-// const morgan = require('morgan');
-// app.use(morgan('dev'));
+const morgan = require('morgan');
+app.use(morgan('dev'));
 const path = require('path');
 const cors = require('cors');
 const bodyParser = require('body-parser');
@@ -297,6 +297,7 @@ app.get('/PMRselectionPage_route',checkUserSession, sessionMiddleware,(req, res)
 });
 
 app.post('/userAuthentication_route', sessionMiddleware,(req,res)=>{
+    console.log('ASDASADSDAD');
     let username = req.body.username;
     let password = req.body.password;
     //mc.connect();
