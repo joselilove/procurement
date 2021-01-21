@@ -13,6 +13,10 @@ router.use('/dist', express.static('dist'));
 
 const dotenv = require('dotenv');
 dotenv.config();
+if (process.env.DEBUG === 'true') {
+    const morgan = require('morgan');
+    app.use(morgan('dev'));
+}
 const mysql = require('mysql');
 const mc = mysql.createConnection({
     host: process.env.DATABASE_HOST,

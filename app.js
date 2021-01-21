@@ -4,8 +4,12 @@ var session = require('express-session');
 const app = express();
 const nodeMailer = require('nodemailer');
 const port = ( process.env.PORT || 8000 );
-const morgan = require('morgan');
-app.use(morgan('dev'));
+const dotenv = require('dotenv');
+dotenv.config();
+if (process.env.DEBUG === 'true') {
+    const morgan = require('morgan');
+    app.use(morgan('dev'));
+}
 const path = require('path');
 const cors = require('cors');
 const bodyParser = require('body-parser');
@@ -18,8 +22,8 @@ var sessionMiddleware = session({
     secret: 'ssshhhhh',
     expires: new Date(Date.now() + (30 * 86400 * 1000)),
     cookie: {expires: new Date(253402300000000)},
-    resave: true,
-    saveUninitialized: true,
+    resave: false,
+    saveUninitialized: false,
   });
 
 app.use(sessionMiddleware);
@@ -71,9 +75,6 @@ app.use('/announcement_ROUTE',                      checkUserSession,sessionMidd
 app.use('/end_user_dashboard_ROUTE',                checkUserSession,sessionMiddleware,end_user_dashboard_ROUTE);
 app.use('/vouchersMngmt_route',                   checkUserSession,sessionMiddleware,routeVouchersMngmt);
 
-
-const dotenv = require('dotenv');
-dotenv.config();
 const mysql = require('mysql');
 const mc = mysql.createConnection({
     host: process.env.DATABASE_HOST,
@@ -297,7 +298,6 @@ app.get('/PMRselectionPage_route',checkUserSession, sessionMiddleware,(req, res)
 });
 
 app.post('/userAuthentication_route', sessionMiddleware,(req,res)=>{
-    console.log('ASDASADSDAD');
     let username = req.body.username;
     let password = req.body.password;
     //mc.connect();
@@ -502,5 +502,5 @@ app.listen((process.env.PORT || 8000), (err) => {
     if(err) throw err;
     console.log(`Port:${port}`);
     console.log(`------------------------------------------------------------------------`);
-    console.log(`Example : ${sample_ip}:${port}`);
+    console.log(`Hostname : ${sample_ip}:${port}`);
 });
