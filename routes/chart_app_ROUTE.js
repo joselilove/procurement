@@ -11,13 +11,15 @@ router.use('/dist', express.static('dist'));
 // end design
 
 
+const dotenv = require('dotenv');
+dotenv.config();
 const mysql = require('mysql');
 const mc = mysql.createConnection({
-    host: '127.0.0.1',
-    port: 3306,
-	user: 'root',
-	password: '',
-    database: 'clsupss_v2',
+    host: process.env.DATABASE_HOST,
+    port: process.env.DATABASE_PORT,
+	user: process.env.DATABASE_USER,
+	password: process.env.DATABASE_PASSWORD,
+    database: process.env.DATABASE_NAME,
     dateStrings:true
 });
 
