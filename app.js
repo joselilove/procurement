@@ -118,12 +118,13 @@ console.log(`-------------------------------------------------------------------
 
 app.post('/send-email', function (req, res) {
     let transporter = nodeMailer.createTransport({
-        host: 'smtp.gmail.com',
-        port: 465,
-        secure: true,
+        host: process.env.MAIL_HOST,
+        port: process.env.MAIL_TLS,
+        secure: process.env.MAIL_SECURE,
+        requireTLS: process.env.MAIL_PORT,
         auth: {
-            user: 'clsu.procurement.service@gmail.com',
-              pass: '123456admins'
+            user: process.env.MAIL_USERNAME,
+            pass: process.env.MAIL_PASSWORD
         }
     });
     let new_pass = makeid(15);
