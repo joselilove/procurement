@@ -1,3 +1,4 @@
-# vi /var/www/html/procurement/run_procurement.sh
 #!/bin/bash
+cd /var/www/html/procurement/
+
 node app
