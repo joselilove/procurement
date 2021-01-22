@@ -1,0 +1,12 @@
+# vi /etc/systemd/system/procurement.service
+[Unit]
+Description=Run Procurement on boot
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/var/www/html/procurement/run_procurement.sh
+TimeoutStartSec=0
+
+[Install]
+WantedBy=default.target
