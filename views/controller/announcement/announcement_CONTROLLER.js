@@ -37,7 +37,7 @@ var CalendarApp;
             }
             var start = copiedEventObject.start._d;
             insert_announcement_via_drop(data_json.title, data_json.content, ( moment(start).unix() )*1000,( moment(start).unix() )*1000, data_json.category);
-            insert_notification(data_json.title);
+            insert_notification(data_json.title, 'CREATED:');
             change_cursor();
     },
     /* on click on event */
